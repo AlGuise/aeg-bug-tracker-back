@@ -26,7 +26,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_25_155130) do
 
   create_table "roles", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.integer "role_title"
+    t.string "role_title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_roles_on_user_id"
@@ -41,8 +41,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_25_155130) do
   create_table "tickets", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "project_id", null: false
-    t.integer "priority"
-    t.integer "cat"
+    t.string "priority"
+    t.string "cat"
     t.integer "status"
     t.string "description"
     t.string "submitted_by"

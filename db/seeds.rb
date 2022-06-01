@@ -62,37 +62,37 @@ puts "Seeding roles..."
 
 role1 = Role.create(
   user_id: user1.id,
-  role_title: 1
+  role_title: "System Admin"
 )
 
 role2 = Role.create(
   user_id: user2.id,
-  role_title: 2
+  role_title: "Project Manager"
 )
 
 role3 = Role.create(
   user_id: user3.id,
-  role_title: 3
+  role_title: "SWE - FrontEnd"
 )
 
 role4 = Role.create(
   user_id: user4.id,
-  role_title: 4
+  role_title: "SWE - BackEnd"
 )
 
 role5 = Role.create(
   user_id: user5.id,
-  role_title: 2
+  role_title: "Project Manager"
 )
 
 role6 = Role.create(
   user_id: user6.id,
-  role_title: 3
+  role_title: "SWE - FrontEnd"
 )
 
 role7 = Role.create(
   user_id: user7.id,
-  role_title: 4
+  role_title: "SWE - BackEnd"
 )
 
 puts "Seeding teams..."
@@ -131,8 +131,8 @@ project3 = Project.create(
 puts "Seeding tickets..."
 
 ticket1 = Ticket.create(
-  priority: 1,
-  cat: 6,
+  priority: "Immediate",
+  cat: "Feature Add/Delete - Backend",
   description: "Create Serializers",
   status: 1,
   submitted_by: user2.user_name,
@@ -141,8 +141,8 @@ ticket1 = Ticket.create(
 )
 
 ticket2 = Ticket.create(
-  priority: 1,
-  cat: 5,
+  priority: "Immediate",
+  cat: "Feature Add/Delete - Frontend",
   description: "Create Frontend Shell",
   status: 1,
   submitted_by: user1.user_name,
@@ -151,8 +151,8 @@ ticket2 = Ticket.create(
 )
 
 ticket3 = Ticket.create(
-  priority: 2,
-  cat: 3,
+  priority: "High",
+  cat: "Feature Update - Frontend",
   description: "Update Style CSS",
   status: 1,
   submitted_by: user2.user_name,
@@ -161,8 +161,8 @@ ticket3 = Ticket.create(
 )
 
 ticket4 = Ticket.create(
-  priority: 3,
-  cat: 3,
+  priority: "Average",
+  cat: "Feature Update - Frontend",
   description: "Change Hamburger Dropdown to onclick",
   status: 1,
   submitted_by: user5.user_name,
@@ -171,8 +171,8 @@ ticket4 = Ticket.create(
 )
 
 ticket5 = Ticket.create(
-  priority: 4,
-  cat: 2,
+  priority: "Low",
+  cat: "Bug Fix - Backend",
   description: "test Clover endpoints",
   status: 1,
   submitted_by: user5.user_name,
@@ -181,8 +181,8 @@ ticket5 = Ticket.create(
 )
 
 ticket6 = Ticket.create(
-  priority: 3,
-  cat: 5,
+  priority: "Average",
+  cat: "Feature Add/Delete - Frontend",
   description: "Create fetches to Clover endpoints",
   status: 1,
   submitted_by: user7.user_name,
@@ -191,8 +191,8 @@ ticket6 = Ticket.create(
 )
 
 ticket7 = Ticket.create(
-  priority: 3,
-  cat: 3,
+  priority: "Average",
+  cat: "Feature Update - Frontend",
   description: "Change background to logo",
   status: 1,
   submitted_by: user6.user_name,
@@ -201,8 +201,8 @@ ticket7 = Ticket.create(
 )
 
 ticket8 = Ticket.create(
-  priority: 3,
-  cat: 3,
+  priority: "Average",
+  cat: "Feature Update - Frontend",
   description: "Change Hamburger Dropdown to onclick",
   status: 1,
   submitted_by: user1.user_name,
@@ -211,8 +211,8 @@ ticket8 = Ticket.create(
 )
 
 ticket9 = Ticket.create(
-  priority: 1,
-  cat: 5,
+  priority: "Immediate",
+  cat: "Feature Add/Delete - Frontend",
   description: "Create Blog Posts",
   status: 1,
   submitted_by: user1.user_name,
@@ -221,8 +221,8 @@ ticket9 = Ticket.create(
 )
 
 ticket10 = Ticket.create(
-  priority: 2,
-  cat: 3,
+  priority: "High",
+  cat: "Feature Update - Frontend",
   description: "Style /myblogs page",
   status: 1,
   submitted_by: user1.user_name,

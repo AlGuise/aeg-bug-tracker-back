@@ -4,12 +4,12 @@ class CreateTickets < ActiveRecord::Migration[7.0]
 
       t.belongs_to :user, null: false, foreign_key: true
       t.belongs_to :project, null: false, foreign_key: true
-      t.integer :priority
+      t.string :priority
         # 1. Immediate
         # 2. High
         # 3. Average
         # 4. Low
-      t.integer :cat
+      t.string :cat
         # 1. Bug Fix - Frontend
         # 2. Bug Fix - Backend
         # 3. Feature Update - Frontend

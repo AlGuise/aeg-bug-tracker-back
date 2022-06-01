@@ -3,7 +3,7 @@ class CreateRoles < ActiveRecord::Migration[7.0]
     create_table :roles do |t|
 
       t.belongs_to :user, null: false, foreign_key: true
-      t.integer :role_title 
+      t.string :role_title
         # 1. System Admin
         # 2. Project Manager
         # 3. SWE - FrontEnd
