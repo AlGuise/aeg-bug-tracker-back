@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     delete '/logout', to: 'sessions#logout'
     get "/me", to: "users#showme"
   # Defines the root path route ("/")
+    post '/createuser', to: "users#create_user"
   # root "articles#index"
 end
