@@ -1,6 +1,6 @@
 class TeamsController < ApplicationController
   before_action :set_team, only: %i[ show update destroy ]
-
+  skip_before_action :authorize_user
   # GET /teams
   def index
     @teams = Team.all

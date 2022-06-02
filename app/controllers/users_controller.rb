@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   include ActionController::Cookies
   before_action :set_user, :only => [:index, :show, :create, :update, :destroy]
-
+  skip_before_action :authorize_user
   # GET /users
   def index
     @users = User.all
