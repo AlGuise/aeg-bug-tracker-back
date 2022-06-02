@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[ show update destroy ]
+  include ActionController::Cookies
+  before_action :set_user, :only => [:index, :show, :create, :update, :destroy]
 
   # GET /users
   def index
@@ -11,6 +12,16 @@ class UsersController < ApplicationController
   # GET /users/1
   def show
     render json: @user
+  end
+
+  # GET /users/1
+  def showme
+    user = User.find_by(id: session[:current_user])
+    if user
+      render json: user
+    else
+      render json: { error: "Not authorized" }, status: :unauthorized
+    end
   end
 
   # POST /users

@@ -1,5 +1,7 @@
 class TicketsController < ApplicationController
   before_action :set_ticket, only: %i[ show update destroy ]
+  skip_before_action :authorize_user, only: :index
+
 
   # GET /tickets
   def index
