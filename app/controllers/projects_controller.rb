@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: %i[ show update destroy ]
-  skip_before_action :authorize_user, only: :index
+include ActionController::Cookies
+skip_before_action :authorize_user, :only => [ :create_project, :index, :create, :show, :update, :destroy ]
+  
 
   # GET /projects
   def index
@@ -15,6 +16,11 @@ class ProjectsController < ApplicationController
   end
 
   # POST /projects
+  def create_project
+    project = Project.create!(project_params)
+    render json: project
+  end
+
   def create
     @project = Project.new(project_params)
 
@@ -47,6 +53,6 @@ class ProjectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def project_params
-      params.fetch(:project, {})
+      params.permit(:name, :deadline, :created_by)
     end
 end
