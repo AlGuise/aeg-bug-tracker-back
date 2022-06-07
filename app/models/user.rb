@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
-  has_one :role
+  has_one :role, dependent: :destroy
   has_many :tickets
   has_many :projects, through: :tickets
   has_many :user_teams

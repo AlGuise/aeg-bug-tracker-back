@@ -17,7 +17,7 @@ skip_before_action :authorize_user, :only => [ :create_project, :index, :create,
 
   # POST /projects
   def create_project
-    project = Project.create!(project_params)
+    project = Project.create(project_params)
     render json: project
   end
 

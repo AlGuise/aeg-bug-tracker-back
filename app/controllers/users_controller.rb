@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   include ActionController::Cookies
-  skip_before_action :authorize_user, :only => [:index, :show, :create, :update, :destroy]
+  skip_before_action :authorize_user, :only => [:index, :show, :create, :create_user, :update, :destroy]
   
   # GET /users
   def index
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 
   # POST /users
   def create_user
-    user = User.create!(user_params)
+    user = User.create(user_params)
     render json: user
   end
 
